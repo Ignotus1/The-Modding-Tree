@@ -54,10 +54,54 @@ function format(decimal, precision = 2, small) {
         if (slog.gte(1e6)) return "F" + format(slog.floor())
         else return Decimal.pow(10, slog.sub(slog.floor())).toStringWithDecimalPlaces(3) + "F" + commaFormat(slog.floor(), 0)
     }
-    else if (decimal.gte("1e1000000")) return exponentialFormat(decimal, 0, false)
-    else if (decimal.gte("1e10000")) return exponentialFormat(decimal, 0)
-    else if (decimal.gte(1e9)) return exponentialFormat(decimal, precision)
-    else if (decimal.gte(1e3)) return commaFormat(decimal, 0)
+    else if (decimal.gte("1e1000000")&&getBuyableAmount("Nf",12).gte(1)) return exponentialFormat(decimal, 0, false)
+    else if (decimal.gte("1e10000")&&getBuyableAmount("Nf",12).gte(1)) return exponentialFormat(decimal, 0)
+    else if (decimal.gte(1e9)&&getBuyableAmount("Nf",12).gte(1)) return exponentialFormat(decimal, precision)
+    else if (decimal.gte(1e3)&&getBuyableAmount("Nf",12).gte(1)) return commaFormat(decimal, 0)
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(29)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(29)).mul(7)))),precision)+"奚婆罗"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(28)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(28)).mul(7)))),precision)+"毗睹罗"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(27)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(27)).mul(7)))),precision)+"三末耶"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(26)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(26)).mul(7)))),precision)+"颠倒"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(25)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(25)).mul(7)))),precision)+"异路"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(24)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(24)).mul(7)))),precision)+"一持"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(23)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(23)).mul(7)))),precision)+"称量"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(22)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(22)).mul(7)))),precision)+"毗佉担"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(21)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(21)).mul(7)))),precision)+"毗薄底"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(20)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(20)).mul(7)))),precision)+"毗盛伽"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(19)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(19)).mul(7)))),precision)+"毗赡婆"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(18)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(18)).mul(7)))),precision)+"毗萨罗"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(17)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(17)).mul(7)))),precision)+"僧羯罗摩"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(16)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(16)).mul(7)))),precision)+"毗伽婆"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(15)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(15)).mul(7)))),precision)+"毗罗伽"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(14)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(14)).mul(7)))),precision)+"弥伽婆"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(13)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(13)).mul(7)))),precision)+"阿婆钤"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(12)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(12)).mul(7)))),precision)+"祢摩"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(11)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(11)).mul(7)))),precision)+"普摩"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(10)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(10)).mul(7)))),precision)+"界分"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(9)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(9)).mul(7)))),precision)+"多婆罗"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(8)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(8)).mul(7)))),precision)+"阿婆罗"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(7)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(7)).mul(7)))),precision)+"摩婆罗"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(6)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(6)).mul(7)))),precision)+"最胜"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(5)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(5)).mul(7)))),precision)+"阿伽罗"
+    else if (decimal.gte(new Decimal(10).pow((new Decimal(2).pow(4)).mul(7)))) return exponentialFormat((decimal.div(new Decimal(10).pow((new Decimal(2).pow(4)).mul(7)))),precision)+"矜羯罗"
+    else if (decimal.gte(1e72)) return exponentialFormat((decimal.div(1e68)),precision)+"无量大数"
+    else if (decimal.gte(1e68)) return formatWhole((Math.floor(decimal / 1e68)))+"无量大数"+formatWhole((Math.floor(decimal / 1e64 % 10000)))+"不可思议"+formatWhole((Math.floor(decimal / 1e60 % 10000)))+"那由他"
+    else if (decimal.gte(1e64)) return formatWhole((Math.floor(decimal / 1e64)))+"不可思议"+formatWhole((Math.floor(decimal / 1e60 % 10000)))+"那由他"+formatWhole((Math.floor(decimal / 1e56 % 10000)))+"阿僧祇"
+    else if (decimal.gte(1e60)) return formatWhole((Math.floor(decimal / 1e60)))+"那由他"+formatWhole((Math.floor(decimal / 1e56 % 10000)))+"阿僧祇"+formatWhole((Math.floor(decimal / 1e52 % 10000)))+"恒河沙"
+    else if (decimal.gte(1e56)) return formatWhole((Math.floor(decimal / 1e56)))+"阿僧祇"+formatWhole((Math.floor(decimal / 1e52 % 10000)))+"恒河沙"+formatWhole((Math.floor(decimal / 1e48 % 10000)))+"极"
+    else if (decimal.gte(1e52)) return formatWhole((Math.floor(decimal / 1e52)))+"恒河沙"+formatWhole((Math.floor(decimal / 1e48 % 10000)))+"极"+formatWhole((Math.floor(decimal / 1e44 % 10000)))+"载"
+    else if (decimal.gte(1e48)) return formatWhole((Math.floor(decimal / 1e48)))+"极"+formatWhole((Math.floor(decimal / 1e44 % 10000)))+"载"+formatWhole((Math.floor(decimal / 1e40 % 10000)))+"正"
+    else if (decimal.gte(1e44)) return formatWhole((Math.floor(decimal / 1e44)))+"载"+formatWhole((Math.floor(decimal / 1e40 % 10000)))+"正"+formatWhole((Math.floor(decimal / 1e36 % 10000)))+"涧"
+    else if (decimal.gte(1e40)) return formatWhole((Math.floor(decimal / 1e40)))+"正"+formatWhole((Math.floor(decimal / 1e36 % 10000)))+"涧"+formatWhole((Math.floor(decimal / 1e32 % 10000)))+"沟"
+    else if (decimal.gte(1e36)) return formatWhole((Math.floor(decimal / 1e36)))+"涧"+formatWhole((Math.floor(decimal / 1e32 % 10000)))+"沟"+formatWhole((Math.floor(decimal / 1e28 % 10000)))+"穰"
+    else if (decimal.gte(1e32)) return formatWhole((Math.floor(decimal / 1e32)))+"沟"+formatWhole((Math.floor(decimal / 1e28 % 10000)))+"穰"+formatWhole((Math.floor(decimal / 1e24 % 10000)))+"杼"
+    else if (decimal.gte(1e28)) return formatWhole((Math.floor(decimal / 1e28)))+"穰"+formatWhole((Math.floor(decimal / 1e24 % 10000)))+"杼"+formatWhole((Math.floor(decimal / 1e20 % 10000)))+"垓"
+    else if (decimal.gte(1e24)) return formatWhole((Math.floor(decimal / 1e24)))+"杼"+formatWhole((Math.floor(decimal / 1e20 % 10000)))+"垓"+formatWhole((Math.floor(decimal / 1e16 % 10000)))+"京"
+    else if (decimal.gte(1e20)) return formatWhole((Math.floor(decimal / 1e20)))+"垓"+formatWhole((Math.floor(decimal / 1e16 % 10000)))+"京"+formatWhole((Math.floor(decimal / 1e12 % 10000)))+"兆"
+    else if (decimal.gte(1e16)) return formatWhole((Math.floor(decimal / 1e16)))+"京"+formatWhole((Math.floor(decimal / 1e12 % 10000)))+"兆"+formatWhole((Math.floor(decimal / 1e8 % 10000)))+"亿"
+    else if (decimal.gte(1e12)) return formatWhole((Math.floor(decimal / 1e12)))+"兆"+formatWhole((Math.floor(decimal / 1e8 % 10000)))+"亿"+formatWhole((Math.floor(decimal / 1e4 % 10000)))+"万"
+    else if (decimal.gte(1e8)) return formatWhole((Math.floor(decimal / 1e8)))+"亿"+formatWhole((Math.floor(decimal / 1e4 % 10000)))+"万"+formatWhole((Math.floor(decimal / 1 % 10000)))+""
+    else if (decimal.gte(1e4)) return formatWhole((Math.floor(decimal / 1e4)))+"万"+formatWhole((Math.floor(decimal / 1 % 10000)))+""
     else if (decimal.gte(0.0001) || !small) return regularFormat(decimal, precision)
     else if (decimal.eq(0)) return (0).toFixed(precision)
 
